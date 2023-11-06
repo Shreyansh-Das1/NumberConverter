@@ -43,7 +43,7 @@ void dectowht()
         }
     }
 }
-void main()
+void numsyst()
 {
     printf("\nEnter the number:\n");
     scanf("%d",&n);
