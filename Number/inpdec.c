@@ -1,39 +1,37 @@
 #include<stdio.h>
 #include "Numsysconverter.c"
 int i=0;
-void display(int arr[])//Displays the array
+int arr[100];//Stores the converted number in reverse
+void display()//Displays the array
 {
     while(i>=0)
         printf("%d", arr[i--]);
 }
-void dec_to_base_p(int arr[], int p)//Coonverts Decimal to number system of base p
+void dec_to_base_p(int p)//Converts Decimal to number system of base p
 {
-    while (n != 0) {
-        arr[i++] = n % p;
-        n = n / p;
-    }
+    if(n==0)
+        return ;
+    arr[i++] = n % p;
+    n = n / p;
+    dec_to_base_p(p);
 }
 void dectooct()
 {
-    int octalNum[100];
-
-    dec_to_base_p(octalNum,8);
+    dec_to_base_p(8);
     printf("\nOctal Value: ");
-    display(octalNum);
+    display();
 }
 void dectohex()
 {
-    int hexNum[100];
-    dec_to_base_p(hexNum,16);
+    dec_to_base_p(16);
     printf("\nHexadecimal: ");
-    display(hexNum);
+    display();
 }
 void dectobin()
 {
-    int binNum[100];
-    dec_to_base_p(binNum,2);
+    dec_to_base_p(2);
     printf("\nBinary: ");
-    display(binNum);
+    display();
 }
 void dectowht(int t)
 {
@@ -42,14 +40,17 @@ void dectowht(int t)
         case 1:
         {
             dectooct();
+            break;
         }
         case 2:
         {
             dectohex();
+            break;
         }
         case 3:
         {
             dectobin();
+            break;
         }
     }
 }
