@@ -1,5 +1,4 @@
 #include<stdio.h>
-#include "Numsysconverter.c"
 int i=0;
 int arr[100];//Stores the converted number in reverse
 void display()//Displays the array
