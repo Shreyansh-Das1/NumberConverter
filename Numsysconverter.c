@@ -5,7 +5,6 @@ int n;
 int dec=0,i=0,t;
 char arr[100];//Stores the converted number in reverse
 void display(){//Displays the array
-
     while(i>=0)
         printf("%c", arr[i--]);
 }
@@ -13,22 +12,33 @@ char inttochar(int l)
 {
     switch(l)
     {
+        case 0:
+            return '0';
+            break;
         case 1:
             return '1';
+            break;
         case 2:
             return '2';
+            break;
         case 3:
             return '3';
+            break;
         case 4:
             return '4';
+            break;
         case 5:
             return '5';
+            break;
         case 6:
             return '6';
+            break;
         case 7:
             return '7';
+            break;
         case 8:
             return '8';
+            break;
         default:
             return '9';
     }
@@ -36,15 +46,15 @@ char inttochar(int l)
 void dec_to_base_p(int p){//Converts Decimal to number system of base p
    if(n==p)
     {
-        arr[0] = 0;
-        arr[1] = 1;
+        arr[0] = '0';
+        arr[1] = '1';
         return ;
     }
     if(n==0)
         return ;
     if(n%p>=10)
     {
-        int ind=n%p -10;
+        int ind=n%p-10;
         char rem[]={'A','B','C','D','E','F'};
         arr[i++]=rem[ind];
     }
